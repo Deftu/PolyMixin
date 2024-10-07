@@ -465,6 +465,15 @@ publishing {
     }
     
     repositories {
+        maven {
+            name = "snapshots "
+            url = "https://repo.polyfrost.org/snapshots"
+            credentials(PasswordCredentials.class)
+            authentication {
+                create(BasicAuthentication.class)
+            }
+        }
+
         if (buildType == 'RELEASE') {
             if (project.hasProperty("releaseRepo")) {
                 maven {
