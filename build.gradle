@@ -24,8 +24,8 @@ apply plugin: 'com.github.johnrengelman.shadow'
 defaultTasks 'licenseFormat', 'check', 'build'
 
 // Basic project information
-group = 'org.spongepowered'
-archivesBaseName = 'mixin'
+group = 'org.oneconfig'
+archivesBaseName = 'polymixin'
 version = buildVersion + (buildType == 'RELEASE' ? '' : "-$buildType")
 
 // Extended project information
