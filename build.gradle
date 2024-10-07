@@ -24,7 +24,7 @@ apply plugin: 'com.github.johnrengelman.shadow'
 defaultTasks 'licenseFormat', 'check', 'build'
 
 // Basic project information
-group = 'org.oneconfig'
+group = 'org.polyfrost'
 archivesBaseName = 'polymixin'
 version = buildVersion + (buildType == 'RELEASE' ? '' : "-$buildType")
 
@@ -466,7 +466,7 @@ publishing {
     
     repositories {
         maven {
-            name = "snapshots "
+            name = "snapshots"
             url = "https://repo.polyfrost.org/snapshots"
             credentials(PasswordCredentials.class)
             authentication {
