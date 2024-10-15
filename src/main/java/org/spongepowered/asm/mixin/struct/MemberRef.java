@@ -262,7 +262,12 @@ public abstract class MemberRef {
         }
 
         public void setHandle(int tag, String owner, String name, String desc) {
-            this.handle = new org.objectweb.asm.Handle(tag, owner, name, desc, tag == Opcodes.H_INVOKEINTERFACE);
+            try {
+                this.handle = new org.objectweb.asm.Handle(tag, owner, name, desc, tag == Opcodes.H_INVOKEINTERFACE);
+            } catch (NoSuchMethodError error) {
+                // ASM 5.0.3 does not have the boolean flag for H_INVOKEINTERFACE
+                this.handle = new org.objectweb.asm.Handle(tag, owner, name, desc);
+            }
         }
 
     }
